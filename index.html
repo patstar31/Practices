@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="name" content="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first website</title>
+    <!--
+    <link rel = "icon" type"image/jpg" href ="favicon.jpg">
+     -->
+</head>
+
+<body>
+/* contains everything to be contained in the body*/
+<h1>
+   This is an h1 heading  
+</h1>
+<h2> this is an h2 heading</h2>
+<h3> this is an h2 heading</h3>
+<h4> this is an h2 heading</h4>
+<h5> this is an h2 heading</h5>
+
+<p> This is a paragraph tag, some text goes here</p>
+<br> <!--this is a line break-->
+<p> 
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia 
+    quam reiciendis praesentium vel minima consequuntur corporis, eius quas illum, 
+    delectus temporibus dignissimos? Illum reprehenderit ad possimus quod, dicta unde 
+    quis?
+</p>
+
+<hr><!--adds a horizontal line across the page-->
+
+<!--creating a hyperlink
+we start of by creating a(anchor) tags
+it brings us to the website
+"target" opens another tab or another window
+"title" places a label when we hover over it-->
+
+<a href="https://gemini.google.com/app/c8f896c82bc20bc8"
+target = "_blank"
+title ="goes to gemini">
+    click me
+</a>
+<br>
+<a href ="drakealbum.html"
+target=" "_blank>
+    drakes newly released album
+</a>
+<br>
+<a href = "mailto:pashan@addue.edu.ph"
+target = "_blank">
+    email second account
+</a>
+<br>
+<a href = "NBAScheduleGames.html">NBAgamesPage
+</a>
+<hr> 
+<h1>This is an example on how to group elements</h1>
+<p><b>Sameple Bold Text</b></p>
+<p><i>Sameple itealic Text</i></p>
+<p><u>Sameple underlined Text</u></p>
+<p><mark style ="background-color: blue">Sameple highlighted Text</mark></p>
+<p><del>Sameple deleted Text</del></p>
+<p><sup>Sameple Text</sup></p>
+<p>Sameple Text</p>
+<hr>
+<h1> practice for span and div</h1>
+
+<h1>
+    <span style ="background-color:tomato">
+         This is a span tag
+    </span>
+</h1>
+
+<h1>
+    <div style = "background-color:blue">
+         This is a Div tag
+    </div>
+</h1>
+ 
+
+<hr>
+<h1>This is a practice for lists</h1>
+<br>
+
+<h3>This is an unorderedlist</h3>
+<p>Example grocery </p>
+<ul>
+    <li>Bananas</li>
+        <ul>
+            <li>ripe</li>
+             <li>unripe</li>
+        </ul>
+    <li>Spinach</li>
+    <li>Avocados</li>
+    <li>Tomatoes</li>
+    <li>Onions</li>
+</ul>
+
+<h3>This is an Orderedlist</h3>
+<h3> Process of learning html and CSS basics</h3>
+<ol>
+    <li>watch brocode</li>
+    <li>do copy brocode</li>
+        <ol>
+            <li>list down the important stuffs</li>
+            <li>practice the important stuffs</li>
+        </ol>
+    <li>create a project</li>
+</ol>
+
+<hr>
+<h3> this is a descriptive list</h3>
+<p> Songs that I like with their artists</p>
+<dl>
+    <dt>A cautionary Tale</dt>
+    <dd>
+        A jazz-infused track reflecting on a draining 
+        relationship and offering a warning about romantic 
+        misadventures.
+    </dd>
+
+    <dt>Ripples</dt>
+    <dd>
+        A folk-inspired indie song exploring self-growth, 
+        vulnerability, and the loneliness of being isolated
+        from loved ones.
+    </dd>
+
+    <dt>The right side of my neck</dt>
+    <dd>
+        A soulful, string-backed melody capturing the intoxicating,
+         lingering presence and scent of a new love.
+    </dd>
+</dl>
+
+<hr>
+<h3> This is how to create a table in html</h3>
+<table  border="1" style = "background-color:aliceblue">
+    <tr align = "center">
+        <th width = "100">Sunday</th>
+        <th width = "100">Monday</th>
+        <th width = "100">Tuesday</th>
+        <th width = "100">Wednesday</th>
+        <th width = "100">Thursday</th>
+        <th width = "100">Friday</th>
+        <th width = "100">Saturday</th>
+    </tr>
+    <tr align = "center">
+        <th width = "100">Closed</th>
+        <th width = "100">Open</th>
+        <th width = "100">Open</th>
+        <th width = "100">Open</th>
+        <th width = "100">Open</th>
+        <th width = "100">Open</th>
+        <th width = "100">Open</th>
+    </tr>
+</table>
+<hr>
+<h2> This is how to create a </h2>
+
+<a href = "drakealbum.html" target = "_blank">
+<button   style = "font-size:25px; background-color:grey; 
+color:black; border-radius:15px">
+Click Me</button>
+</a>
+
+
+<h2 id = "greeting">Hello, my name is Pat</h2>
+<button id = "greetingChanged">Button to change the greeting above.</button>
+<script>
+   
+       const changeGreeting= document.getElementById("greetingChanged");
+       const originalGreeting = document.getElementById("greeting");
+
+       changeGreeting.addEventListener("click", function(){
+        originalGreeting.textContent = "nice to meet you pat"
+       })
+    
+</script>
+<br>
+<hr>
+<form action = "index.php" method="POST">
+    <label for ="username">username</label>
+    <input type="text" id = "username" placeholder="username" required>
+    <br>
+     <label for ="password">Password</label>
+    <input type="password" id = "password" placeholder="password" required>
+    <br>
+    <label for ="phone">Password</label>
+    <input type="tel" id = "phone" placeholder="+63912-345-6789" pattern-="[6,3]{2}[0-9]{2} - [0-9]{3} - [0-9]{4}" required>
+    <br>
+
+    <input type ="submit">
+    <input type ="reset">
+</form>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
