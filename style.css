@@ -1,0 +1,235 @@
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+
+  /* Turns on scroll snapping for the whole page */
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-padding-top: 80px;
+}
+body {
+  background-color: #f8f7e6;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: "Montserrat", sans-serif;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+header {
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(
+    8px
+  ); /* Adds a gorgeous blurry glass effect behind the nav links */
+
+  /* THE STICKY ENGINE */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Forces the header to stay on top of your floating cards */
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Soft divider line */
+}
+#CoverPage {
+  margin-top: 80px; /* Exactly matches your header height so nothing gets hidden! */
+}
+#headerContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+#headerContainer .nav-group {
+  display: flex;
+  gap: 16px;
+}
+#headerContainer a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+#headerTitle {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 2em;
+  text-align: center;
+}
+#CoverPage img {
+  width: 100%;
+  display: block;
+}
+section {
+  padding: 48px 24px;
+}
+
+#aboutLaufey {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+
+/*Arranging the photogrids*/
+#photoArrangements {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px; /* Spacing between the polaroids */
+  align-items: start;
+}
+/* 2. Turn each image container into a white Polaroid frame */
+#photoArrangements img {
+  width: 100%;
+  height: 220px; /* FIXED: Setting a height allows object-fit to work! */
+  display: block;
+  object-fit: cover; /* Now this safely crops your images without squishing them */
+  object-position: top;
+
+  /* Polaroid Frame Styling */
+  background-color: #ffffff;
+  padding: 10px 10px 30px 10px;
+  border-radius: 2px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+/* 3. Manipulate Row 1 (The first 3 images span 2 columns each = 6 total) */
+#photoArrangements img:nth-child(1),
+#photoArrangements img:nth-child(2),
+#photoArrangements img:nth-child(3) {
+  grid-column: span 2;
+}
+
+/* 4. Manipulate Row 2 (The last 2 images span 3 columns each = 6 total) */
+#photoArrangements img:nth-child(4),
+#photoArrangements img:nth-child(5) {
+  grid-column: span 2;
+}
+
+/*For the gallery part of the Music Gallery part of the code */
+#musicGallery {
+  display: grid;
+  gap: 20px;
+}
+#musicGallery .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+#wordings {
+  border: 2px solid rgb(179, 176, 176);
+  border-radius: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/*For the Achievements Part of the code */
+#achievementsDisplay {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  padding: 80px 24px;
+  max-width: 1200px; /* Prevents the layout from stretching too wide on giant monitors */
+  margin: 0 auto; /* Perfectly centers the entire section on the screen */
+}
+#achievementsDisplay h2 {
+  /* Tell the heading to start at column line 1 and span across 3 lines (all the way across) */
+  grid-column: 1 / span 2;
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+#LaufeyGrammyPhoto {
+  width: 100%; /* Forces the image to seamlessly fill the card from edge to edge */
+  height: 320px; /* Gives it a powerful, cinematic height */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease; /* Prepares the image for a smooth zoom */
+}
+#leftSide {
+  background-color: white;
+  border-radius: 12px; /* Slightly rounder for a softer, organic feel */
+  box-shadow: 0 8px 24px rgba(140, 122, 107, 0.06);
+  border: 1px solid transparent;
+  overflow: hidden; /* CRITICAL: Clips the image corners to the card's border-radius */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Ultra-smooth professional easing */
+}
+
+/* 2. FIXED HOVER: Changed '.' to '#' and capitalized the 'S' to match your HTML exactly! */
+#leftSide:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 38px rgba(140, 122, 107, 0.12);
+  border-color: #c9a05d;
+  cursor: pointer;
+}
+
+/* Secret Trick: When the parent card (#leftSide) is hovered, zoom the image inside it! */
+#leftSide:hover #LaufeyGrammyPhoto {
+  transform: scale(1.04);
+}
+/* 1. THE RIGHT-SIDE COLUMN PACKAGING */
+#achievementList {
+  display: flex;
+  flex-direction: column;
+  /* This creates a uniform 24px vertical gap between each card box */
+  gap: 24px;
+}
+
+/* 2. THE DESIGN FOR EACH INDIVIDUAL CARD BOX */
+.achievementCard {
+  background-color: #ffffff; /* Pure white contrast pops out beautifully against a cream body */
+  padding: 25px 30px; /* Internal breathing room inside the box */
+  border-radius: 8px; /* Clean, modern rounded corners */
+
+  /* A very soft, subtle shadow so it looks like it's lifting off the page */
+  box-shadow: 0 4px 15px rgba(140, 122, 107, 0.08);
+
+  /* Smoothly animates EVERYTHING (transform, shadow, border) over 0.3 seconds */
+  transition: all 0.3s ease;
+
+  /* Ensure a transparent border exists so the page doesn't jitter when highlighted */
+  border: 1px solid transparent;
+}
+
+/* 3. THE HOVER HIGHLIGHT STIMULUS */
+.achievementCard:hover {
+  /* Effect A: The card physically floats upwards by 5 pixels */
+  transform: translateY(-5px);
+
+  /* Effect B: The shadow grows deeper and wider, mimicking a real light source */
+  box-shadow: 0 12px 24px rgba(140, 122, 107, 0.15);
+
+  /* Effect C: Highlight the border with a soft, elegant vintage gold or taupe accent line */
+  border-color: #c9a05d;
+
+  /* Optional: make the mouse cursor change to a pointer hand */
+  cursor: pointer;
+}
+
+/* 4. TYPOGRAPHY ACCENTS INSIDE CARDS */
+.cardYear {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: #c9a05d; /* Gold accent color for the year stamp */
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.achievementCard h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  color: #2a2a2a;
+  margin: 0 0 10px 0;
+}
+
+.achievementCard p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #666666; /* Charcoal gray makes long descriptions easier on the eyes */
+  line-height: 1.5;
+  margin: 0;
+}

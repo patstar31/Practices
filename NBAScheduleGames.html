@@ -1,32 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="name" content="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My first website</title>
-    <link rel = "icon" type"image/jpg" href ="NBAIcon.jpg">
+    <link rel="icon" type="image/jpeg" href="NBAIcon.jpg">
+    
 </head>
 <body>
+
     <header>
         <div>
-            <span>
-                <h1>Welcome to the website to display the upcoming NBA Games</h1>
-            </span>
+            <h2 id="mainTitle">Welcome to the website to display the upcoming NBA Games</h2>
             <nav id="Links">
-                <a href="index.html" target="_blank">Home Page</a>
+                <a href="index.html">Home Page</a>
             </nav>
         </div>
     </header>
 
+    <main>
+        
+        <section id="upcoming-games">
+            <h2>Tonight's Matchups</h2>
+            
+            <div class="game-card">
+                <h3>Los Angeles Lakers vs. Boston Celtics</h3>
+                <p class="game-time">Time: 7:30 PM EST</p>
+                <p class="game-location">Arena: TD Garden</p>
+                <button class="ticket-btn">Buy Tickets</button>
+            </div>
+
+            <div class="game-card">
+                <h3>Golden State Warriors vs. Miami Heat</h3>
+                <p class="game-time">Time: 10:00 PM EST</p>
+                <p class="game-location">Arena: Chase Center</p>
+                <button class="ticket-btn">Buy Tickets</button>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="news">
+            <h2>Latest NBA News</h2>
+            <article class="news-item">
+                <h3>Playoff Race Heats Up</h3>
+                <p>With only a few weeks left in the regular season, teams are fighting hard for the top seeds in both the Eastern and Western conferences. Every single game counts!</p>
+                <a href="#" class="read-more">Read full article...</a>
+            </article>
+        </section>
+
+        <hr>
+
+        <section id="standings">
+            <h2>Eastern Conference Top 3</h2>
+            <table class="standings-table">
+                <thead>
+                    <tr align = "center">
+                        <th>Rank</th>
+                        <th>Team</th>
+                        <th>Wins</th>
+                        <th>Losses</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr align = "center">
+                        <td>1</td>
+                        <td>Milwaukee Bucks</td>
+                        <td>52</td>
+                        <td>20</td>
+                    </tr>
+                    <tr align = "center">
+                        <td>2</td>
+                        <td>Boston Celtics</td>
+                        <td>50</td>
+                        <td>22</td>
+                    </tr>
+                    <tr align = "center">
+                        <td>3</td>
+                        <td>Philadelphia 76ers</td>
+                        <td>48</td>
+                        <td>24</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
 
     <footer>
         <hr>
-        author: Patstar<br>
-        &copy; copyright reserved<br>
-        <small><a href ="mailto:pashan@addu.edu.ph">Email</a></small>
+        <p>
+            Author: Patstar<br>
+            &copy; Copyright Reserved<br>
+            <small><a href="mailto:pashan@addu.edu.ph">Email</a></small>
+        </p>
     </footer>
 
 </body>
-
 </html>
