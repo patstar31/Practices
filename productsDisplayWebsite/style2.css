@@ -1,0 +1,57 @@
+#itemsDisplay {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  gap: 1em;
+  grid-auto-flow: row;
+}
+.items {
+  padding: 2em;
+  background-color: rgb(114, 101, 249);
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  height: 100px;
+  width: 100px;
+}
+header {
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(
+    8px
+  ); /* Adds a gorgeous blurry glass effect behind the nav links */
+
+  /* THE STICKY ENGINE */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Forces the header to stay on top of your floating cards */
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Soft divider line */
+}
+
+#headerContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+#headerContainer .nav-group {
+  display: flex;
+  gap: 16px;
+}
+#headerContainer a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+#headerTitle {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 2em;
+  text-align: center;
+}
